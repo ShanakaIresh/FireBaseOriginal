@@ -1,6 +1,6 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 
 const firebaseConfig = {
@@ -15,37 +15,4 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore()
-// console.log(db)
-const callref = collection(db, 'Details')
-// console.log(callref)
-const docArray = []
-const list = document.querySelector('.list')
 
-
-const getData = (docArray) => {
-    docArray.forEach((doc) => {
-        const query = `
-            <ol>
-                <li>${doc[0].name.Name}</li>
-                <li>${doc[0].name.Age}</li>
-                <li>${doc[0].name.Email}</li>
-            </ol>
-    `
-        list.innerHTML += query
-    })
-}
-
-getDocs(callref).then((snapshot) => {
-    // console.log(snapshot)
-    // console.log(snapshot.docs)
-    snapshot.docs.forEach((element) => {
-        // docArray.push([{ ...element.data(), id: element.id }])
-        docArray.push([{ name: element.data() }])
-    });
-    console.log(docArray)
-    return docArray
-}).then((docArray) => {
-    getData(docArray)
-
-})
