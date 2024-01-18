@@ -1,0 +1,15 @@
+.container {
+    background-color: rgb(247, 159, 59);
+    width: 400px;
+    height: 800px;
+    margin-top: 50px;
+    border-style: double;
+    border-width: 5px;
+    border-radius: 15px;
+
+}
+
+.list {
+    padding-top: 30px;
+    font-size: 25px;
+}
