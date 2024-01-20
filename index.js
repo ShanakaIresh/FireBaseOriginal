@@ -55,5 +55,7 @@ getDocs(callRef).then((snapshot) => {
 
 })
 
+console.log('hurry')
+
 
 
